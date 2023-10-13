@@ -123,11 +123,14 @@ async function connectStudentRoom(studentId: string, roomId: string) {
 
   const validate = await existRoom.student.map((item) => {
     if (item.id === existStudent.id) {
+      console.log(item.name);
+
       return item.id;
     }
   });
 
-  if (validate.length > 0) {
+  if (validate.length > 0 && validate[0] !== undefined) {
+    console.log(validate);
     return new Error("Already registered student");
   }
 

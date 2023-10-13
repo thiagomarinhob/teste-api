@@ -3,13 +3,13 @@ import { Teacher } from "../entities/Teacher";
 
 type ITeacher = {
   name: string;
-  age: string;
+  age: number;
 };
 
 type ITeacherUpdate = {
   id: string;
   name: string;
-  age: string;
+  age: number;
 };
 
 const teacherRepository = AppDataSource.getRepository(Teacher);

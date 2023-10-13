@@ -1,10 +1,4 @@
-import {
-  Column,
-  Entity,
-  JoinColumn,
-  OneToMany,
-  PrimaryGeneratedColumn,
-} from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Room } from "./Room";
 
 @Entity("teachers")
@@ -16,7 +10,7 @@ export class Teacher {
   name: string;
 
   @Column()
-  age: string;
+  age: number;
 
   @OneToMany(() => Room, (room) => room.teacher)
   rooms: Room[];
